@@ -10,24 +10,45 @@ html, body * {
 
 .menu {
     position: absolute;
-    background-color: white;
+    background-color: blue;
     width: 100%;
-    height: 42px;
+    height: 45px;
 }
 #logo {
-    width: 33px;
-    height: 29px;
-    background-image: url("../img/logo.png");
+    width: 35px;
+    height: 30px;
     float: left;
-
+    margin-left: 1%;
+    margin-top: 5px;
 }
 
 
-#search {
+.search {
     float: left;
     width: 40%;
     height: 29px;
+    margin-left: 1%;
+    margin-top: 5px;
 }
+
+input:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+#map_container {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    background-color: red;
+}
+
+.map {
+    contain: size;
+    float: left;
+}
+
 
 .stylish-input-group .input-group-addon{
     background: white !important; 
