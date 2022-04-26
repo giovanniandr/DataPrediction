@@ -1,7 +1,7 @@
 <!doctype html>
 {% load static %}
-{% csrf_token %}
-{% load leaflet_tags %} 
+{% csrf_token %} 
+{% load leaflet_tags %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
     {% leaflet_js %}
     {% leaflet_css %}
   </head>
@@ -36,11 +35,9 @@
                         </div>
             </div>
         </div>
-
+        
     <!-- Map Section -->
-        <div class="map_container">
-            {% leaflet_map "map" %}
-        </div>
-        <script src="{% static 'main.js' %}"></script>
+    <div id="map"><script src="{% static 'main.js' %}"></script> </div>
+        
   </body>
 </html>
