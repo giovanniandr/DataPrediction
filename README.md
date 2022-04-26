@@ -6,5 +6,6 @@ cd/Project
 pip install Django
 pip install geocoder
 pip install folium
+pip install GDAL
 
 python manage.py runserver
