@@ -37,17 +37,19 @@ input:focus{
     border: none;
 }
 
-#map_container {
+.map_container {
     width: 100%;
     height: 100vh;
     float: left;
-    background-color: red;
 }
 
-.map {
-    contain: size;
-    float: left;
+#map {
+    width: 800px;
+    height: 800px;
+    margin: 5rem auto;
 }
+
+
 
 
 .stylish-input-group .input-group-addon{

@@ -9,6 +9,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
@@ -32,9 +34,9 @@
         </div>
 
     <!-- Map Section -->
-        <div id="map_container">
-           <div class="map"> {{m | safe }} </div>
+        <div class="map_container">
+           <div id="map"> </div>
         </div>
-    
+        <script src="{% static 'main.js' %}"></script>
   </body>
 </html>
