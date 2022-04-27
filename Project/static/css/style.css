@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
-html, body * {
+html, body {
     font-family: Inter;
     width: 100%;
     height: 100%;
@@ -15,27 +15,40 @@ html, body * {
     height: 45px;
     z-index: 2;
 }
-#logo {
+#logo, img {
     width: 35px;
-    height: 30px;
+    height: 31px;
     float: left;
     margin-left: 1%;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 
 .search {
     float: left;
-    width: 40%;
+    width: 45%;
     height: 29px;
     margin-left: 1%;
     margin-top: 5px;
 }
 
+textarea:focus, input[type="text"]:focus {   
+  border-color: white;
+  box-shadow: none;
+  outline: 0 none;
+}
+
 input:focus{
-    outline: none;
-    box-shadow: none;
-    border: none;
+    border: 1px solid white;
+    transition: 0.35s ease;
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+input:focus::-webkit-input-placeholder{
+    color: rgba(0, 0, 0, 0.8) !important;
 }
 
 
@@ -44,20 +57,76 @@ input:focus{
     width: 100%;
     height: 100vh;
     z-index: 1;
+    opacity: 1000;
 }
-
-
-
 
 .stylish-input-group .input-group-addon{
-    background: white !important; 
-}
-.stylish-input-group .form-control{
-	border-right:0; 
-	box-shadow:0 0 0; 
-	border-color:#ccc;
+    background: #F6F6F4 !important; 
+    color: rgba(0, 0, 0, 0.5);
+    border-color: white;
+    border-radius: 10px;
 }
 .stylish-input-group button{
     border:0;
-    background:transparent;
+    background-color: #F6F6F4;
+}
+
+.stylish-input-group .form-control{ 
+    border-left: 0;
+	box-shadow:0 0 0; 
+	border-color: white;
+    background-color: #F6F6F4;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none; 
+}
+
+.navbar {
+    float: left;
+    width: 50%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    margin-left: -3%;
+    width: 70%;
+    background-color: red;
+}
+
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar li a{
+    color: rgba(0, 0, 0, 0.8);
+    display: inline-flex;
+    overflow: hidden;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 0 20px 0 20px;
+    margin-top: -6px;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    
+}
+
+ a:hover::after {
+    border-bottom: 1px solid #1AD285
+}
+
+a :visited {
+    border-bottom: 1px solid #1AD285;
 }
