@@ -87,7 +87,7 @@ a {
     text-decoration: none; 
 }
 
-.navbar {
+.nav {
     float: left;
     width: 50%;
     height: 20px;
@@ -98,35 +98,75 @@ a {
 .wrap {
     margin-left: -3%;
     width: 70%;
-    background-color: red;
+    background-color: white;
 }
 
-.navbar ul li {
+.nav ul li {
     display: inline-block;
     list-style: none;
     display: inline-block;
 }
 
-.navbar li a{
-    color: rgba(0, 0, 0, 0.8);
+.nav li a{
     display: inline-flex;
     overflow: hidden;
     height: 50px;
     letter-spacing: 1px;
     margin: 0 20px 0 20px;
-    margin-top: -6px;
+    margin-top: -2px;
     padding: 0 4px;
     position: relative;
     text-decoration: none;
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    
 }
 
- a:hover::after {
-    border-bottom: 1px solid #1AD285
+.nav-link{
+    color: rgba(0, 0, 0, 0.5) !important;
 }
 
-a :visited {
-    border-bottom: 1px solid #1AD285;
+.nav-active {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.nav-item {
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+}
+.nav-item:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 60%;
+    margin-top: -2px;
+   margin-left: 20%;
+    height: 2px;
+    background-color: #3998FF;
+    border-radius: 1px 1px 0 0;
+    opacity: 0;
+    transition: 0.3s;
+}  
+
+.nav-item:not(.is-active):hover:before {
+    opacity: 1;
+    bottom: 0;
+}
+.nav-item:not(.is-active):hover {
+    color: #333;
+}
+
+.nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    transition: 0.4s;
+    height: 5px;
+    z-index: 1;
+    border-radius: 8px 8px 0 0;
+}
+@media (max-width: 580px) {
+    .nav {
+        overflow: auto;
+   }
 }

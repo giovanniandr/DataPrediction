@@ -34,12 +34,12 @@
                             <input type="text" class="form-control"  placeholder="Search for the location within Ireland" >
                           </div>  
             </div>
-            <nav class="navbar">
+            <nav class="nav">
 
               <div class="wrap">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Dashboard <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav mr-auto" >
+                  <li class="nav-item active" >
+                    <a class="nav-active"class="nav-item is-active"  href="{% url 'index' %}">Dashboard <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Analysis</a>
@@ -52,10 +52,12 @@
                   </li>
                 </ul>
               </div>
+              <span class="nav-indicator"></span>
             </nav>
         </div>
         
     <!-- Map Section -->
+    <script src="{% static 'under.js' %}"> </script>
     <div id="map"><script src="{% static 'main.js' %}"></script> </div>
         
   </body>

@@ -24,7 +24,7 @@ let template = `
 
 
 // Read csv and get property name for each property
-markers.bindPopup(template).openPopup();
+markers.bindPopup(template);
 
 
 
