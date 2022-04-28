@@ -12,7 +12,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 
 //Read csv
-omnivore.csv('listings.csv').addTo(map);
+omnivore.csv('/workspace/DataPrediction/Project/static/listings.csv').addTo(map);
 
 //Get latitude and longitude from listings.csv
 const markers = L.marker([53.29178, -6.25792]).addTo(map);

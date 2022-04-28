@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 html, body {
-    font-family: Inter;
+    font-family: Inter !important;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -169,4 +169,49 @@ a {
     .nav {
         overflow: auto;
    }
+}
+
+h1 {
+    font-size: 20px !important;
+}
+
+h2 {
+    font-size: 18px !important;
+}
+
+.analysis {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    background-color: rgba(249, 249, 249) !important;
+}
+
+.headings, .paraghs, .visualizations {
+    width: 92%;
+    margin-left: 5%;
+    margin-top: 1%;
+    float: left;
+}
+
+.mainheading {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.paraghs{
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.visualizations {
+    width: 70%;
+    height: 40%;
+    background-color: grey;
+}
+
+.plots {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
 }

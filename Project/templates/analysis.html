@@ -1,0 +1,85 @@
+<!doctype html>
+{% load static %}
+{% csrf_token %} 
+{% load leaflet_tags %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Analysis</title>   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    {% leaflet_js %}
+    {% leaflet_css %}
+  </head>
+
+  <body>
+    <!-- Menu section -->  
+        <div class="menu">
+            <div id="logo">
+                <img src="{% static 'img/logo.png'%}">
+            </div>
+            <nav class="nav">
+
+              <div class="wrap">
+                <ul class="navbar-nav mr-auto" >
+                  <li class="nav-item active" >
+                    <a class="nav-link"class="nav-item is-active"  href="{% url 'index' %}">Dashboard <span class="sr-only">(</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-active" href="{% url 'analysis' %}">Analysis</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Prediction</a>
+                  </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">Notebook</a>
+                  </li>
+                </ul>
+              </div>
+              <span class="nav-indicator"></span>
+            </nav>
+        </div>
+        
+    
+    <script src="{% static 'under.js' %}"> </script>
+    <!-- Analysis Section -->
+    <div class="analysis"> 
+        <div class="mainheading"> 
+          <h1> The analysis of the short term rental market </h1>
+        </div>
+        <div class="paraghs">
+          <p> In this section of the application you will able to see the deep analysis of short term renting in Dublin, Ireland. This application has a potential of automated market research in the future from the use of datasets
+            available containing informations about properties, showing the potential that Machine Learning has and the benefits of companies adapating to it.<br>
+            <br>
+
+            The analysis of this application uses Airbnb Open Source Dataset from Dublin, Ireland to visualize  where demand of short term properties will be and more insights, perfect for first time landlords looking for an
+            opportunity of earn profit through renting a property and investors  that work with short term properties. </p>
+        </div>
+
+        <div class="headings"> 
+          <h2> When is people looking for short term places in Dublin, Ireland. </h2>
+        </div>
+
+        <div class="visualizations">
+          <img class="plots" src="{% static 'img/example.png'%}">
+        </div>
+        <div class="paraghs">
+          <p> It is possible to discover from the visualization above that Dublin for being the capital of Ireland has people looking for short term properties during the whole year, however peaks of demand are possible to be 
+            seen in months due to holidays.
+            
+            February has an increase on the demand due to St.Patrick’s as this holiday attracts a lot of people to come to Ireland to celebrate this tradiotional holiday.
+            
+            From the start of may has a slightly increase of the demand as being the start of summer in Ireland, Dublin is one of the best destination to visit in Europe during the summer time, winning awards from TripAdvisor. 
+            (TripAdvisor 2022). </p>
+        </div>
+    </div>
+        
+  </body>
+</html>
