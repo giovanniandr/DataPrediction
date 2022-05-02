@@ -4,12 +4,17 @@ const map = L.map('map', { zoomControl:false, attributionControl:false }).setVie
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     
+//Bbox parament limits results to only Dublin using min and max lati and long
+    bbox: [-6.543618876090989, 53.222563956123736, -6.029960581107389, 53.63696060258761],
     maxZoom: 18,
     id: 'giovanniandr/cl2gbpvbt003214kskxixuz4y',
     tileSize: 512,
     zoomOffset: -1,
     accessToken: apiKey
 }).addTo(map);
+
+
+
 
 //Read csv
 omnivore.csv('/workspace/DataPrediction/Project/static/listings.csv').addTo(map);
