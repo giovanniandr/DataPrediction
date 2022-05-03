@@ -21,7 +21,8 @@
 
   <body>
     <!-- Menu section -->  
-        <div class="menu">
+      <div class="menu">
+        <div id="app">
             <div id="logo">
                 <img src="{% static 'img/logo.png'%}">
             </div>
@@ -56,9 +57,11 @@
               <span class="nav-indicator"></span>
             </nav>
         </div>
+      </div>
         
     <!-- Map Section -->
     <script src="{% static 'under.js' %}"> </script>
+    <script src="{% static '../src/index.js' %}"> </script>
     <div id="map"><script src="{% static 'main.js' %}"></script> </div>
         
   </body>
