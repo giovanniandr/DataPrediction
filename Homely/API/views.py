@@ -4,6 +4,6 @@ from .serializers import Serializer
 from .models import Address
 
 # Create your views here.
-class AddressView(generics.CreateAPIView):
+class AddressView(generics.ListAPIView):
     queryset = Address.objects.all()
     serializer_class = Serializer
