@@ -6,7 +6,8 @@ To run the application in gitpod run these commands terminal before run server <
 To run django: <br>
 
 cd Homely<br>
-pip install django djangorestframework coder djongo
+pip install django djangorestframework coder djongo<br>
+pip install pymongo[srv]
 python manage.py runserver<br>
 
 To run React: <br>
