@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Homely.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'CLIENT': {"host":"mongodb+srv://cct:<password>@map.5gtux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"}
+        'CLIENT': {"host":"mongodb+srv://cct:<password>@map.5gtux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", "name":"Map", "authMechanism":"SCRAM-SHA-1"}
     }
 }
 
