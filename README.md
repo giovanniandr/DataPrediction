@@ -3,8 +3,6 @@ This application has future potential to be scale to rent and purchases of prope
 
 To run the application in gitpod run these commands terminal before run server <br>
 
-sudo apt-get install gdal-bin libgdal-dev -y<br>
-
 To run django: <br>
 
 cd Homely<br>
@@ -14,5 +12,7 @@ To run React: <br>
 
 Open new terminal <br>
 cd Homely/Frontend<br>
+npm install<br>
+npm run build <br>
 npm run dev<br>
 
