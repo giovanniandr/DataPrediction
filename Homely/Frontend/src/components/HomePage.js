@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Analytics from "./Analytics";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 
 export default class HomePage extends Component {
