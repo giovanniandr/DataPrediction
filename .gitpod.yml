@@ -2,4 +2,3 @@
 
 tasks:
   - init: pip install django django-leaflet djangorestframework geocoder
-          sudo apt-get install gdal-bin libgdal-dev
