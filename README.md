@@ -8,6 +8,7 @@ To run django: <br>
 cd Homely<br>
 pip install django djangorestframework coder djongo<br>
 pip install pymongo[srv]
+sudo apt-get install gdal-bin libgdal-dev -y <br>
 python manage.py runserver<br>
 
 To run React: <br>

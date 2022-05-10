@@ -1,4 +1,4 @@
 #Auto install commands on text file
 
 tasks:
-  - init: pip install django django-leaflet djangorestframework geocoder && sudo apt-get install gdal-bin libgdal-dev -y
+  - init: pip install django django-leaflet djangorestframework geocoder djongo pymongo[srv]
