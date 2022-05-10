@@ -15,5 +15,6 @@ Open new terminal <br>
 cd Homely/Frontend<br>
 npm install<br>
 npm run build <br>
+npm start <br>
 npm run dev<br>
 
