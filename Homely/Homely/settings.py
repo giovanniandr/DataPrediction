@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-13a&v74m%1%k1rgbtb=%yl+rwtf$#6#awcz&zx43-7qhdaq_h)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [https://homely2018320.herokuapp.com/]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'API',
-    'Map',
     'rest_framework'
 
 ]
@@ -80,8 +79,8 @@ WSGI_APPLICATION = 'Homely.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {"host":"mongodb+srv://cct:<password>@map.5gtux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", "name":"Map", "authMechanism":"SCRAM-SHA-1"}
+        'ENGINE': '',
+        'CLIENT': {"host":"mongodb+srv://cct:<2018320>@map.5gtux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"}
     }
 }
 
