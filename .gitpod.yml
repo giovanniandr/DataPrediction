@@ -1,0 +1,4 @@
+#Auto install commands on text file
+
+tasks:
+  - init: sudo apt-get install gdal-bin libgdal-dev -y
