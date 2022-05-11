@@ -6,13 +6,13 @@ To run the application in gitpod run these commands terminal before run server <
 To run django: <br>
 
 cd Homely<br>
-pip install django django-leaflet djangorestframework djongo pymongo==3.12.3 <br>
+pip install django django-leaflet djangorestframework djongo pymongo[srv]==3.12.3 <br>
 python manage.py runserver<br>
 
 To run React: <br>
 
 Open new terminal <br>
-cd Homely/Frontend<br>
+cd Homely/frontend<br>
 npm install<br>
 npm run build <br>
 npm start <br>
