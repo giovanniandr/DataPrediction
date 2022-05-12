@@ -1,49 +1,112 @@
-import React, {Component} from 'react';
-import mapboxgl from 'mapbox-gl';
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import './Map.css';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React, { useState, useRef } from "react";
+import useSwr from "swr";
+import ReactMapGL, { Marker, FlyToInterpolator } from "react-map-gl";
+import useSupercluster from "use-supercluster";
+import "./Map.css";
+import * as Data from "./data/airbnbdublingeo.json"
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvdmFubmlhbmRyIiwiYSI6ImNsMWtucG02ZDAyNTIzaW8zeWg1aG5qbmwifQ.yOWlVopRvptHXp4Kp-3v4A'
-const url = "https://8000-giovanniand-datapredict-052uxmkfwlh.ws-eu44.gitpod.io/address";
+const fetcher = (...args) => fetch(...args).then(response => response.json());
 
-class MapCluster extends Component {
+export default function App() {
+  const [viewport, setViewport] = useState({
+    latitude: 53.346,
+    longitude: -6.254,
+    width: "100vw",
+    height: "100vh",
+    zoom: 12
+  });
+  const mapRef = useRef();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      lng: -6.254,
-      lat: 53.346,
-      zoom: 12,
-    };
-      this.mapContainer = React.createRef();
-    }
+  const points = Data.features.map(data => ({
+    type: "Feature",
+        properties: {
+        cluster: false,
+        dataId: data.id,
+        dataNeighbourhood: data.Neighbourhood,
+        dataCity: data.City,
+        dataState: data.State,
+        dataPropertyType: data.PropertyType,
+        dataBathrooms: data.Bathrooms,
+        dataBedrooms: data.Bedrooms,
+        dataPrice: data.Price
+      },
+        geometry: {
+          type: "Point",
+          coordinates:  [ parseFloat(data.geometry.coordinates[0]), parseFloat(data.geometry.coordinates[1]) ] }
+  }));
 
-    componentDidMount() {
+  const {clusters, supercluster} = useSupercluster({
+    points,
+    zoom: viewport.zoom,
+    bounds: [-6.543618876090989, 53.222563956123736, -6.029960581107389, 53.63696060258761],
+    options: {radius: 75, maxZoom: 20}
+  });
 
-      const { lng, lat, zoom } = this.state;
-      const map = new mapboxgl.Map({
-            container: this.mapContainer.current,
-            style: 'mapbox://styles/giovanniandr/cl2gbpvbt003214kskxixuz4y',
-            center: [lng, lat],
-            zoom: zoom,
-            tileSize: 512,
-            zoomControl:false, 
-            attributionControl:false,
-            //Bbox parament limits results to only Dublin using min and max lati and long
-            bbox: [-6.543618876090989, 53.222563956123736, -6.029960581107389, 53.63696060258761]
-      });
+  return (
+    <div>
+      <ReactMapGL
+        {...viewport}
+        maxZoom={20}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        onViewportChange={newViewport => {
+          setViewport({ ...newViewport });
+        }}
+        ref={mapRef}
+      >
+        {clusters.map(cluster => {
 
-      }
+          const [longitude, latitude] = cluster.geometry.coordinates;
+          const {cluster : isCluster, point_count: pointCount} = cluster.properties;
 
-  render () {
-      return (
-        <div>
-        <div ref={this.mapContainer} className="map" />
+          if (isCluster) {
+            return (
+              <Marker
+                key={`cluster-${cluster.id}`}
+                latitude={latitude}
+                longitude={longitude}
+              >
+                <div
+                  className="cluster-marker"
+                  style={{
+                    width: `${10 + (pointCount / points.length) * 20}px`,
+                    height: `${10 + (pointCount / points.length) * 20}px`
+                  }}
+                  onClick={() => {
+                    const expansionZoom = Math.min(
+                      supercluster.getClusterExpansionZoom(cluster.id),
+                      20
+                    );
 
-        </div>
-      );
-  }
+                    setViewport({
+                      ...viewport,
+                      latitude,
+                      longitude,
+                      zoom: expansionZoom,
+                      transitionInterpolator: new FlyToInterpolator({
+                        speed: 2
+                      }),
+                      transitionDuration: "auto"
+                    });
+                  }}
+                >
+                  {pointCount}
+                </div>
+              </Marker>
+            );
+          }
+         
+          return ( <Marker
+            key={cluster.properties.dataId}
+            latitude={latitude}
+            longitude={longitude}
+          >
+            <button className="crime-marker">
+              <img src="/custody.svg" alt="crime doesn't pay" />
+            </button>
+          </Marker>
+          );  
+      })}
+      </ReactMapGL>
+    </div>
+  );
 }
-
-export default MapCluster

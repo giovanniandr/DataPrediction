@@ -14,6 +14,7 @@ To run React: <br>
 Open new terminal <br>
 cd Homely/frontend<br>
 npm install<br>
+yarn add supercluster use-supercluster<br>
 npm run build <br>
 npm start <br>
 

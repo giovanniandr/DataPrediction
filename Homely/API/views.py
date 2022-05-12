@@ -15,4 +15,4 @@ class AddressView(APIView):
     def get(self, request):
         address = Address.objects.all()
         serializer = Serializer(address, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
