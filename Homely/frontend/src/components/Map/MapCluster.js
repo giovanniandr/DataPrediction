@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
-import useSwr from "swr";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import './Map.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvdmFubmlhbmRyIiwiYSI6ImNsMWtucG02ZDAyNTIzaW8zeWg1aG5qbmwifQ.yOWlVopRvptHXp4Kp-3v4A'
-
- function Data(){
-  const fetcher = (...args) => fetch(...args).then(response => response.json());
-  const url = "https://8000-giovanniand-datapredict-052uxmkfwlh.ws-eu44.gitpod.io/address";
-  const { data, error } = useSwr(url, fetcher);
-}
+const url = "https://8000-giovanniand-datapredict-052uxmkfwlh.ws-eu44.gitpod.io/address";
 
 class MapCluster extends Component {
 
@@ -37,12 +33,14 @@ class MapCluster extends Component {
             //Bbox parament limits results to only Dublin using min and max lati and long
             bbox: [-6.543618876090989, 53.222563956123736, -6.029960581107389, 53.63696060258761]
       });
+
       }
 
   render () {
       return (
         <div>
         <div ref={this.mapContainer} className="map" />
+
         </div>
       );
   }

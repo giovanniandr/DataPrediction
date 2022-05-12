@@ -14,5 +14,6 @@ class Address(models.Model):
     Bathrooms = models.DecimalField(max_digits=10, decimal_places=2)
     Bedrooms = models.DecimalField(max_digits=10, decimal_places=2)
     Price = models.DecimalField(max_digits=10, decimal_places=2)
+
     
 

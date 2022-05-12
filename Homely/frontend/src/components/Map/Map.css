@@ -7,3 +7,12 @@
     z-index: 1;
     opacity: 1000;
 }
+
+.location-marker {
+    background: none;
+    border: none;
+}
+
+.location-marker img {
+    width: 25px;
+}
