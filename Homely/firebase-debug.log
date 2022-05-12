@@ -1,0 +1,28 @@
+[debug] [2022-05-12T12:17:15.452Z] ----------------------------------------------------------------------
+[debug] [2022-05-12T12:17:15.454Z] Command:       /home/gitpod/.nvm/versions/node/v16.14.2/bin/node /home/gitpod/.nvm/versions/node/v16.14.2/bin/firebase login --no-localhost
+[debug] [2022-05-12T12:17:15.454Z] CLI Version:   10.9.2
+[debug] [2022-05-12T12:17:15.454Z] Platform:      linux
+[debug] [2022-05-12T12:17:15.454Z] Node Version:  v16.14.2
+[debug] [2022-05-12T12:17:15.455Z] Time:          Thu May 12 2022 12:17:15 GMT+0000 (Coordinated Universal Time)
+[debug] [2022-05-12T12:17:15.455Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[debug] [2022-05-12T12:17:15.639Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2022-05-12T12:17:15.639Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"dfba3209-89e0-467d-9fec-b23b3ed13b03"}
+[debug] [2022-05-12T12:17:15.930Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2022-05-12T12:17:15.930Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"mcayUofo3Q1lxQUUf9ePO1ow_BNzizbjavQdbklLvpc"}
+[info] 
+[info] To sign in to the Firebase CLI:
+[info] 
+[info] 1. Take note of your session ID:
+[info] 
+[info]    DFBA3
+[info] 
+[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[info] 
+[info]    https://auth.firebase.tools/login?code_challenge=Y265l9AmQSbODqmKl_k1IIwXtccy7M8zeclvw2n82dQ&session=dfba3209-89e0-467d-9fec-b23b3ed13b03&attest=mcayUofo3Q1lxQUUf9ePO1ow_BNzizbjavQdbklLvpc
+[info] 
+[info] 3. Paste or enter the authorization code below once you have it:
+[info] 

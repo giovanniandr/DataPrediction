@@ -53,6 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['http://8000-giovanniand-datapredict-052uxmkfwlh.ws-eu44.gitpod.io', 'https://8000-giovanniand-datapredict-052uxmkfwlh.ws-eu44.gitpod.io']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+CSRF_COOKIE_SECURE = False
+
 ROOT_URLCONF = 'Homely.urls'
 
 TEMPLATES = [
@@ -79,8 +83,11 @@ WSGI_APPLICATION = 'Homely.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'CLIENT': {"host":"mongodb+srv://cct:<2018320>@map.5gtux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"}
+        'ENGINE': 'djongo',
+        'NAME': 'Locations',
+        'CLIENT': {
+           'host': 'mongodb+srv://cct:password@map.5gtux.mongodb.net/Locations?retryWrites=true&w=majority',
+        }
     }
 }
 
