@@ -8,6 +8,9 @@ export default function App() {
   const [viewport, setViewport] = useState({
     latitude: 53.346,
     longitude: -6.254,
+    mapStyle:"mapbox://styles/mapbox/light-v10",
+    zoomControl:false, 
+    attributionControl:false,
     width: "100vw",
     height: "100vh",
     zoom: 12
@@ -15,7 +18,7 @@ export default function App() {
   const mapRef = useRef();
 
 
-  const points = Data.features.map(data => ({
+  const points = Data.features.slice(0,1000).map(data => ({
     type: "Feature",
         properties: {
         cluster: false,
@@ -63,11 +66,11 @@ export default function App() {
                 latitude={latitude}
                 longitude={longitude}
               >
-                <div
+                <button
                   className="cluster-marker"
                   style={{
-                    width: `${10 + (pointCount / points.length) * 20}px`,
-                    height: `${10 + (pointCount / points.length) * 20}px`
+                    width: `${10 + (pointCount / points.length) * 40}px`,
+                    height: `${10 + (pointCount / points.length) * 40}px`
                   }}
                   onClick={() => {
                     const expansionZoom = Math.min(
@@ -88,7 +91,8 @@ export default function App() {
                   }}
                 >
                   {pointCount}
-                </div>
+                  <img src="/cluster.svg" alt="Clusters" />
+                </button>
               </Marker>
             );
           }
@@ -98,7 +102,7 @@ export default function App() {
             latitude={latitude}
             longitude={longitude}
           >
-            <button className="crime-marker">
+            <button className="house-marker">
               <img src="/house.svg" alt="Properties location" />
             </button>
           </Marker>

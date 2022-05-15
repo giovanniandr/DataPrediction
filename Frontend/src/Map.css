@@ -8,11 +8,22 @@
   align-items: center;
 }
 
-.crime-marker {
+.house-marker {
   background: none;
   border: none;
 }
 
-.crime-marker img {
-  width: 25px;
+.cluster-marker {
+  background: none;
+  border: none;
 }
+
+.house-marker img {
+  width: 33px;
+}
+
+.cluster-marker img {
+  width: 33px;
+}
+
+
