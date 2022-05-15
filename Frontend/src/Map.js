@@ -6,14 +6,14 @@ import * as Data from "./data/airbnbdublingeo.json"
 
 export default function App() {
   const [viewport, setViewport] = useState({
-    latitude: 53.346,
-    longitude: -6.254,
+    latitude: 53.355,
+    longitude: -6.25,
     mapStyle:"mapbox://styles/mapbox/light-v10",
     zoomControl:false, 
     attributionControl:false,
     width: "100vw",
     height: "100vh",
-    zoom: 12
+    zoom: 10.33
   });
   const mapRef = useRef();
 
