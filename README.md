@@ -18,4 +18,5 @@ Run .gitpod.yml<br>
 To upload to Firebase: <br>
 Open new terminal <br>
 npm install -g firebase-tools <br>
+firebase login  --no-localhost<br>
 
