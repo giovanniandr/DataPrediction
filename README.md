@@ -16,5 +16,6 @@ Create .env.local with access token REACT_APP_MAPBOX_TOKEN<br>
 Run .gitpod.yml<br>
 
 To upload to Firebase: <br>
+Open new terminal <br>
 npm install -g firebase-tools <br>
 
