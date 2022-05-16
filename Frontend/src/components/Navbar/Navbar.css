@@ -175,3 +175,50 @@ h1 {
 h2 {
     font-size: 18px !important;
 }
+
+.Titles {
+    
+    height: 30px;
+    float: left;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 4%;
+}
+
+.Introductions {
+    
+    height: 150px;
+    float: left;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.Visualisations {
+    background-color: green;
+    height: 300px;
+    float: left;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.Insights {
+    background-color: orange;
+    height: 200px;
+    float: left;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.Footer {
+    background-color: pink;
+    height: 40px;
+    float: left;
+    width: 90%;
+    margin: 2%;
+    margin-left: 4%;
+    padding: 0;
+    
+}
