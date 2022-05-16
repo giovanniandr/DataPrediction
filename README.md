@@ -13,7 +13,7 @@ To run front end React:<br>
 
 Open new terminal<br>
 cd Frontend <br>
-Create .env.local with access token REACT_APP_MAPBOX_TOKEN="keyhere"<br>
+Create .env.local with access token REACT_APP_MAPBOX_TOKEN="pk.eyJ1IjoiZ2lvdmFubmlhbmRyIiwiYSI6ImNsMWtucG02ZDAyNTIzaW8zeWg1aG5qbmwifQ.yOWlVopRvptHXp4Kp-3v4A"<br>
 Run .gitpod.yml<br>
 
 To upload to Firebase:<br>
