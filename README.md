@@ -12,6 +12,7 @@ python manage.py runserver<br>
 To run front end React:<br>
 
 Open new terminal<br>
+cd Frontend <br>
 Create .env.local with access token REACT_APP_MAPBOX_TOKEN<br>
 Run .gitpod.yml<br>
 
