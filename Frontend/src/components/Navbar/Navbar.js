@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { MenuItems } from "./MenuItems";
 import "./Navbar.css"
 import logo from "../../logo.png";
+import { Link } from "react-router-dom";
+
 
 class Navbar extends Component {
 
@@ -26,21 +27,18 @@ class Navbar extends Component {
                 <nav className="nav"> 
                 <div className="wrap">
                 <ul className="nav-menu" >
-                {MenuItems.map((item, index) =>{
-                    return (
-                    <li className="nav-item" key={index}>
-                        <a className={item.cName} class="nav-link"  href={item.url}> 
-                        {item.title}     
-                        </a>
-                    </li>
-
-                    )
-                })}
+                    
+                    <li className="nav-item"> <Link to ="/" > Dashboard </Link> </li>
+                    <li className="nav-item"> <Link to ="/analytics" > Analytics </Link> </li>
+                    <li className="nav-item">  <Link to ="/predictions" > Predictions </Link> </li>
+                    <li className="nav-item">  <Link to ="/notebook" > Notebook </Link> </li>
+                   
                 </ul>
             </div>
             <span className="nav-indicator"></span>
             </nav>
         </div>
+        
         )
     }
 }
